@@ -1,2 +1,3 @@
-# portfolio
- Personal portfolio website using Next.js 13 with modern UI design
+# Portfolio
+
+Personal portfolio website using Next.js 15 with modern UI design
