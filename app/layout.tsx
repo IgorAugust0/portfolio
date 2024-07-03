@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from "./ui/fonts";
-import './';
+import '@/app/ui/global.css';
 
 export const metadata: Metadata = {
   title: "Igor Augusto | Portfolio",
