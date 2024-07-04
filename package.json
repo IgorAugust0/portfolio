@@ -16,6 +16,7 @@
     "autoprefixer": "10.4.15",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.2.12",
     "next": "15.0.0-rc.0",
     "next-auth": "5.0.0-beta.19",
     "postcss": "8.4.31",

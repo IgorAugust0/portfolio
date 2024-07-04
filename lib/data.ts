@@ -7,30 +7,12 @@ import heinc from '@/public/heinc.png';
 import timecapsuleImg from '@/public/timecapsule.png';
 
 export const links = [
-  {
-    name: 'Home',
-    hash: '#home',
-  },
-  {
-    name: 'About',
-    hash: '#about',
-  },
-  {
-    name: 'Projects',
-    hash: '#projects',
-  },
-  {
-    name: 'Skills',
-    hash: '#skills',
-  },
-  {
-    name: 'Experience',
-    hash: '#experience',
-  },
-  {
-    name: 'Contact',
-    hash: '#contact',
-  },
+  { name: 'Início', hash: '#inicio' },
+  { name: 'Sobre', hash: '#sobre' },
+  { name: 'Projetos', hash: '#projetos' },
+  { name: 'Habilidades', hash: '#habilidades' },
+  { name: 'Experiência', hash: '#experiencia' },
+  { name: 'Contato', hash: '#contato' },
 ] as const;
 
 export const experiencesData = [

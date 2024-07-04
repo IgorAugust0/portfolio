@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
-import { inter } from "./ui/fonts";
-import '@/app/ui/global.css';
+import type { Metadata } from 'next';
+import { inter } from '../components/fonts';
+import '@/app/globals.css';
+import TopNav from '@/components/topnav';
 
 export const metadata: Metadata = {
-  title: "Igor Augusto | Portfolio",
+  title: 'Igor Augusto | Full-stack Developer',
   description:
-    "Igor is a full-stack developer with 2 years of experience that have done multiple projects with many technologies.",
+    'Igor is a full-stack developer with 2 years of experience that have done multiple projects with many technologies.',
+  // metadataBase: new URL('https://igor-augusto.com'),
 };
 
 export default function RootLayout({
@@ -16,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} relative antialiased bg-gray-50 rela text-gray-950`}
+        className={`${inter.className} relative h-[5000px] bg-gray-50 text-gray-950 antialiased`}
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] -z-10"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] -z-10"></div>
-
+        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-[#fbe2e3] blur-[10rem] sm:w-[68.75rem]"></div>
+        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-[#dbd7fb] blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
+        <TopNav />
         {children}
       </body>
     </html>
