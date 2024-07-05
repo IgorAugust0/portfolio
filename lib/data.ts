@@ -28,13 +28,15 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    id: 1,
     title: 'Divid',
     description:
-      'Aplicativo de divisão de despesas, onde é possível criar grupos de despesas, adicionar membros e registrar as despesas do grupo. Fui desenvolvedor front-end, responsável pelas telas de login, cadastro, homepage e detalhes do usuário. Desenvolvida como projeto final do curso Hackatruck',
+      'Aplicativo de divisão de despesas, onde é possível criar grupos de despesas, adicionar membros e registrar as despesas do grupo. Fui desenvolvedor front-end, responsável pelas telas de login, cadastro, homepage e detalhes do usuário.',
     tags: ['SwiftUI', 'Node-RED', 'IBM Cloud', 'Cloudant', 'Figma'],
     imageUrl: dividImg,
   },
   {
+    id: 2,
     title: 'H&I Inc.',
     description:
       'Aplicação web full-stack de portal de anúncios de produtos com sistema de login e cadastro. Com seções de acesso público (homepage com anúncios) e privado (dashboard do usuário com CRUD de anúncios e do usuário, além de mensagens de interesse).',
@@ -42,16 +44,15 @@ export const projectsData = [
     imageUrl: heinc,
   },
   {
+    id: 3,
     title: 'TimeCapsule',
     description:
-      'Aplicação full-stack do back-end ao mobile, que funciona como uma cápsula do tempo guardando memórias passadas numa timeline, onde o usuário poderá adicionar textos, fotos e vídeos de acontecimentos marcantes da sua vida, organizados por mês e ano. Desenvolvida durante o evento NLW Spacetime da Rocketseat',
+      'Aplicação full-stack do back-end ao mobile, que funciona como uma cápsula do tempo guardando memórias passadas numa timeline, onde o usuário poderá adicionar textos, fotos e vídeos de acontecimentos marcantes da sua vida, organizados por mês e ano.',
     tags: [
-      'TypeScript',
       'Next.js',
       'React',
       'PostgreSQL',
       'Tailwind',
-      'Fastify',
       'React Native',
       'Expo',
     ],

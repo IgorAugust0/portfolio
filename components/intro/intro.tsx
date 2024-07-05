@@ -5,7 +5,10 @@ import IntroButtons from '@/components/intro/intro-buttons';
 
 export default function Intro() {
   return (
-    <section className="mb-28 max-w-[60rem] text-center sm:mb-0">
+    <section
+      id="inicio"
+      className="mb-28 max-w-[60rem] scroll-mt-36 text-center sm:mb-0"
+    >
       <IntroImage />
       <IntroHeading />
       <IntroButtons />

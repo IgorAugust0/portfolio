@@ -7,10 +7,11 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <motion.section
-      className="mb-28 max-w-[46rem] text-center leading-8 sm:mb-40"
+      id="sobre"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
+      className="mb-28 max-w-[46rem] scroll-mt-28 text-center leading-8 sm:mb-40"
     >
       <SectionHeading>Sobre mim</SectionHeading>
       <p className="mb-3">
@@ -23,10 +24,10 @@ export default function About() {
         <span className="underline">amo</span> a sensação de finalmente
         descobrir uma solução para um problema. Minha stack principal é Java com
         <span className="font-medium">
-          &nbsp; Spring Boot, React, Next.js e PostgreSQL
+          &nbsp;Spring Boot, React, Next.js e PostgreSQL
         </span>
-        . Também sou familiar com Python e PHP. Estou sempre procurando aprender
-        novas tecnologias!
+        . Também sou familiar com desenvolvimento mobile para iOS. Estou sempre
+        procurando aprender novas tecnologias!
       </p>
 
       <p>
