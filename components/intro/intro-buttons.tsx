@@ -36,27 +36,23 @@ export default function IntroButtons() {
         href="https://www.linkedin.com/in/igor-august0/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-110 hover:text-gray-950 focus:scale-110 active:scale-105"
+        className="group relative flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-105 focus:scale-105 active:scale-100"
       >
-        <motion.div
-          whileHover={{ rotate: 360 }}
-          transition={{ repeat: 0, duration: 1 }}
-        >
-          <BsLinkedin />
-        </motion.div>
+        <BsLinkedin />
+        <span className="absolute left-[50%] top-[3.25rem] z-20 origin-top -translate-x-[50%] scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
+          LinkedIn
+        </span>
       </a>
       <a
         href="https://github.com/IgorAugust0"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-110 hover:text-gray-950 focus:scale-110 active:scale-105"
+        className="group relative flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-105 focus:scale-105 active:scale-100"
       >
-        <motion.div
-          whileHover={{ rotate: 360 }}
-          transition={{ repeat: 0, duration: 1 }}
-        >
-          <FaGithubSquare />
-        </motion.div>
+        <FaGithubSquare />
+        <span className="absolute left-[50%] top-[3.25rem] z-20 origin-top -translate-x-[50%] scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
+          GitHub
+        </span>
       </a>
       {/* socials without animated icon: */}
       {/* <a

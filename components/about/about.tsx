@@ -1,12 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import SectionHeading from '@/components/section-heading';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function About() {
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+  });
+  const { setActiveSection, lastClicked } = useActiveSectionContext();
+
+  // Set the active section when the about section is in view, but only if the last click was more than 1 second ago
+  useEffect(() => {
+    if (inView && Date.now() - lastClicked > 1000) {
+      setActiveSection('Sobre');
+    }
+  }, [inView, setActiveSection, lastClicked]);
+
   return (
     <motion.section
+      ref={ref}
       id="sobre"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
