@@ -8,11 +8,7 @@ import React, {
   ReactNode,
   useContext,
 } from 'react';
-import { links } from '@/lib/data';
-
-// Define the type for section names, context type and context provider props
-
-type SectionName = (typeof links)[number]['name'];
+import { SectionName } from '@/lib/types';
 
 interface ActiveSectionContextType {
   activeSection: SectionName;
@@ -32,10 +28,8 @@ export const ActiveSectionContext =
 export default function ActiveSectionContextProvider({
   children,
 }: ActiveSectionContextProviderProps) {
-  // State to hold the active section
-  const [activeSection, setActiveSection] = useState<SectionName>('Início');
-  // State to hold the last clicked time, so the observer can temporarily be disabled
-  const [lastClicked, setLastClicked] = useState(0);
+  const [activeSection, setActiveSection] = useState<SectionName>('Início'); // State to hold the active section
+  const [lastClicked, setLastClicked] = useState(0); // State to hold the last clicked time, so the observer can temporarily be disabled
 
   return (
     <ActiveSectionContext.Provider

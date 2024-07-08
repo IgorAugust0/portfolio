@@ -1,25 +1,13 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import IntroImage from '@/components/intro/intro-image';
 import IntroHeading from '@/components/intro/intro-heading';
 import IntroButtons from '@/components/intro/intro-buttons';
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import useSectionObserver from '@/lib/hooks';
 
 export default function Intro() {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
-  const { setActiveSection, lastClicked } = useActiveSectionContext();
-
-  // Set the active section when the intro section is in view
-  useEffect(() => {
-    if (inView && Date.now() - lastClicked > 1000) {
-      setActiveSection('Início');
-    }
-  }, [inView, setActiveSection, lastClicked]);
+  const ref = useSectionObserver({ sectionName: 'Início' });
 
   return (
     <section
