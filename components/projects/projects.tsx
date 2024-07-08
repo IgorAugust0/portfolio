@@ -11,7 +11,7 @@ export default function Projects() {
   const ref = useSectionObserver({ sectionName: 'Projetos' });
 
   return (
-    <section ref={ref} id="projetos" className="scroll-mt-28">
+    <section ref={ref} id="projetos" className="scroll-mt-28 mb-28">
       <SectionHeading>Meus projetos</SectionHeading>
       <div>
         {projectsData.map((project) => (
