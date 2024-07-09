@@ -21,7 +21,7 @@ export default function SkillItem({
 }) {
   return (
     <motion.li
-      className="rounded-xl border border-black/[0.1] bg-white px-5 py-3"
+      className="border-blk rounded-xl bg-white px-5 py-3"
       variants={fadeInVariants}
       initial="initial"
       whileInView="animate"
