@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
 import { FaReact } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
@@ -17,12 +17,31 @@ export const links = [
 
 export const experiencesData = [
   {
+    id: 1,
     title: 'Graduando em Sistema de Informação',
     location: 'Uberlândia, MG',
     description:
-      'Estou atualmente cursando o 7º período de Sistema de Informação na Universidade Federal de Uberlândia, onde tenho aprendido sobre diversas áreas da computação, como programação, banco de dados, redes, engenharia de software, entre outras.',
-    icon: React.createElement(LuGraduationCap),
+      'Atualmente cursando o 7º período de Sistemas de Informação na Universidade Federal de Uberlândia, onde tenho aprendido sobre diversas áreas da computação, como programação, banco de dados, redes, engenharia de software, entre outras.',
+    icon: createElement(LuGraduationCap),
     date: '2021-Atualmente',
+  },
+  {
+    id: 2,
+    title: 'Lorem Ipsum',
+    location: 'Uberlândia, MG',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
+    icon: createElement(CgWorkAlt),
+    date: '2022-2023',
+  },
+  {
+    id: 3,
+    title: 'Lorem Ipsum',
+    location: 'Uberlândia, MG',
+    description:
+      'Lorem ipsum adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
+    icon: createElement(FaReact),
+    date: '2023-2024',
   },
 ] as const;
 
