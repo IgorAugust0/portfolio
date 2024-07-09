@@ -54,19 +54,6 @@ export default function IntroButtons() {
           GitHub
         </span>
       </a>
-      {/* socials without animated icon: */}
-      {/* <a
-        href="https://www.linkedin.com/in/igor-august0/"
-        className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-105 focus:scale-105 active:scale-100"
-      >
-        <BsLinkedin />
-      </a> */}
-      {/* <a
-        href="https://github.com/IgorAugust0"
-        className="flex items-center gap-2 rounded-full border border-black/10 bg-white p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out hover:scale-105 focus:scale-105 active:scale-100"
-      >
-        <FaGithubSquare />
-      </a> */}
     </motion.div>
   );
 }
