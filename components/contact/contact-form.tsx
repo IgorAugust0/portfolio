@@ -2,8 +2,13 @@
 
 import React from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
+import { sendEmail, State } from '@/lib/actions';
+import { useActionState } from 'react';
 
 export default function ContactForm() {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useActionState(sendEmail, initialState);
+
   return (
     <>
       <p className="-mt-4 text-gray-700">
@@ -14,14 +19,24 @@ export default function ContactForm() {
         ,&nbsp;ou por meio do campo abaixo
       </p>
 
-      <form className="mt-9 flex flex-col">
+      <form className="mt-9 flex flex-col" action={formAction}>
+        {/* Name field */}
+        {/* <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Seu nome/empresa"
+          autoComplete="name"
+          className="border-blk h-14 rounded-lg border px-4"
+        /> */}
         {/* Email field */}
         <input
           type="email"
           name="email"
           id="email"
           placeholder="Seu email"
-          className="border-blk h-14 rounded-lg border px-4"
+          autoComplete="email"
+          className="border-blk my-3 h-14 rounded-lg border px-4"
         />
         {/* Message field */}
         <textarea
