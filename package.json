@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
+    "@react-email/components": "^0.0.21",
+    "@react-email/tailwind": "^0.0.18",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "20.5.7",
     "@vercel/postgres": "^0.5.1",

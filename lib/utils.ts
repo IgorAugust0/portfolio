@@ -1,15 +1,3 @@
-// // Since we are using zod in the actions file, theres no need to validate the fields manually
-// export const validateString = (
-//   value: unknown,
-//   maxLength: number,
-// ): value is string => {
-//   if (!value || typeof value !== 'string' || value.length > maxLength) {
-//     return false;
-//   }
-
-//   return true;
-// };
-
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 
@@ -24,4 +12,19 @@ export const getErrorMessage = (error: unknown): string => {
   }
 
   return message;
+};
+
+// get env variable while checking if it exists, providing a default value if it doesn't
+export const getEnvVariable = (name: string, defaultValue?: string): string => {
+  const value = process.env[name];
+
+  if (!value) {
+    if (defaultValue !== undefined) {
+      return defaultValue;
+    }
+    throw new Error(`${name} environment variable is not set`);
+  }
+
+  // return value ?? defaultValue;
+  return value;
 };
