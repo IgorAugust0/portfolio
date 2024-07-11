@@ -5,7 +5,7 @@ import { VerticalTimeline } from 'react-vertical-timeline-component';
 import { experiencesData } from '@/lib/data';
 import SectionHeading from '@/components/section-heading';
 import 'react-vertical-timeline-component/style.min.css';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 import ExperienceItem from '@/components/experience/experience-item';
 
 export default function Experience() {

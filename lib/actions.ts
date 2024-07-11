@@ -22,13 +22,13 @@ export type State = {
 const FormSchema = z.object({
   email: z
     .string()
-    .email({ message: 'Invalid email address' })
-    .min(5, { message: 'Email must be at least 5 characters long' })
-    .max(50, { message: 'Email must be at most 50 characters long' }),
+    .email({ message: 'Endereço de email inválido' })
+    .min(5, { message: 'Email deve ter no mínimo 5 caracteres' })
+    .max(50, { message: 'Email deve ter no máximo 50 caracteres' }),
   message: z
     .string()
-    .min(1, { message: 'Message cannot be empty' })
-    .max(500, { message: 'Message must be at most 500 characters long' }),
+    .min(1, { message: 'Mensagem não pode estar vazia' })
+    .max(500, { message: 'Mensagem deve ter no máximo 500 caracteres' }),
 });
 
 export async function sendEmail(prevState: State, formData: FormData) {
@@ -41,7 +41,7 @@ export async function sendEmail(prevState: State, formData: FormData) {
     console.log('Error sending email...');
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing fields. Please fill in all required fields.',
+      message: 'Dados faltando. Por favor, preencha todos os campos.',
     };
   }
 

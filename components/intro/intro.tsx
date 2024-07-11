@@ -4,7 +4,7 @@ import React from 'react';
 import IntroImage from '@/components/intro/intro-image';
 import IntroHeading from '@/components/intro/intro-heading';
 import IntroButtons from '@/components/intro/intro-buttons';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 
 export default function Intro() {
   const ref = useSectionObserver({ sectionName: 'Início' });

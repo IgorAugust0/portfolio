@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import SectionHeading from '@/components/section-heading';
 import { projectsData } from '@/lib/data';
 import ProjectCard from '@/components/projects/project-card';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 
 export default function Projects() {
   const ref = useSectionObserver({ sectionName: 'Projetos' });

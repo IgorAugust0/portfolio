@@ -3,7 +3,7 @@
 import React from 'react';
 import SectionHeading from '@/components/section-heading';
 import { skillsData } from '@/lib/data';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 import SkillItem from '@/components/skills/skill-item';
 
 export default function Skills() {

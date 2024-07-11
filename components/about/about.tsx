@@ -3,7 +3,7 @@
 import React from 'react';
 import SectionHeading from '@/components/section-heading';
 import { motion } from 'framer-motion';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 
 export default function About() {
   const ref = useSectionObserver({ sectionName: 'Sobre', threshold: 0.75 });

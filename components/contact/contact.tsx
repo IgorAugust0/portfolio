@@ -2,7 +2,7 @@
 
 import React from 'react';
 import SectionHeading from '@/components/section-heading';
-import useSectionObserver from '@/lib/hooks';
+import { useSectionObserver } from '@/lib/hooks';
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/contact/contact-form';
 
