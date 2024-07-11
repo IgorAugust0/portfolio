@@ -1,24 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import { sendEmail, State } from '@/lib/actions';
-import { useActionState } from 'react';
+import React from 'react';
+import { sendEmail } from '@/lib/actions';
 import SubmitBtn from '@/components/contact/submit-button';
-import { InputChangeEvent } from '@/lib/types';
+import { useContactForm } from '@/lib/hooks';
 
 export default function ContactForm() {
-  const initialState: State = { message: null, errors: {} };
-  const [state, formAction] = useActionState(sendEmail, initialState);
-  const [formValues, setFormValues] = useState({ email: '', message: '' });
-
-  const handleInputChange = (e: InputChangeEvent) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-
-    // Clear error for the current field
-    state.errors = { ...state.errors, [name]: [] };
-    state.message = null;
-  };
+  const { formValues, handleInputChange, formAction, state } = useContactForm();
 
   return (
     <>

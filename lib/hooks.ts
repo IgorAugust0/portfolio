@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import type { FormValues, SectionName } from '@/lib/types';
+import type { FormValues, InputChangeEvent, SectionName } from '@/lib/types';
+import { State, sendEmail } from './actions';
 
 export function useSectionObserver({
   sectionName,
@@ -39,4 +40,30 @@ export function useFormFilled(formValues: FormValues) {
   }, [formValues]);
 
   return isFormFilled;
+}
+
+/**
+ * Custom hook for handling a contact form using experimental hook `useActionState`.
+ * @returns An object containing form values, input change handler, form action, and state.
+ */
+export function useContactForm() {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useActionState(sendEmail, initialState);
+  const [formValues, setFormValues] = useState({ email: '', message: '' });
+
+  const handleInputChange = (e: InputChangeEvent) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+
+    // Clear error for the current field
+    state.errors = { ...state.errors, [name]: [] };
+    state.message = null;
+  };
+
+  return {
+    formValues,
+    handleInputChange,
+    formAction,
+    state,
+  };
 }
