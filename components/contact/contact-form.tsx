@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { FaPaperPlane } from 'react-icons/fa';
 import { sendEmail, State } from '@/lib/actions';
 import { useActionState } from 'react';
+import SubmitBtn from '@/components/contact/submit-button';
 
 export default function ContactForm() {
   const initialState: State = { message: null, errors: {} };
@@ -29,6 +29,7 @@ export default function ContactForm() {
           autoComplete="name"
           className="border-blk h-14 rounded-lg border px-4"
         /> */}
+
         {/* Email field */}
         <input
           type="email"
@@ -36,25 +37,44 @@ export default function ContactForm() {
           id="email"
           placeholder="Seu email"
           autoComplete="email"
+          aria-describedby="email-error"
           className="border-blk my-3 h-14 rounded-lg border px-4"
         />
+        <div id="email-error" aria-live="polite" aria-atomic="true">
+          {state.errors?.email &&
+            state.errors.email.map((error: string) => (
+              <p key={error} className="mt-2 text-sm text-red-500">
+                {error}
+              </p>
+            ))}
+        </div>
+
         {/* Message field */}
         <textarea
           name="message"
           id="message"
           placeholder="Sua mensagem"
+          aria-describedby="message-error"
           className="border-blk my-3 h-52 rounded-lg p-4"
         ></textarea>
+        <div id="message-error" aria-live="polite" aria-atomic="true">
+          {state.errors?.message &&
+            state.errors.message.map((error: string) => (
+              <p key={error} className="mt-2 text-sm text-red-500">
+                {error}
+              </p>
+            ))}
+        </div>
+
+        {/* Fields error message */}
+        <div aria-live="polite" aria-atomic="true">
+          {state.message ? (
+            <p className="mt-2 text-sm text-red-500">{state.message}</p>
+          ) : null}
+        </div>
+
         {/* Submit button */}
-        <button
-          type="submit"
-          className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 
-          rounded-full bg-gray-900 text-white outline-none transition-all 
-          hover:scale-105 hover:bg-gray-950 focus:scale-105 active:scale-100"
-        >
-          Enviar
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
-        </button>
+        <SubmitBtn />
       </form>
     </>
   );

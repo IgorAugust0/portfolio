@@ -31,7 +31,7 @@ export default function ContactFormEmail({
           <Container>
             <Section className="border-blk my-10 rounded-md bg-white px-10 py-4">
               <Heading className="leading-tight">
-                Você recebeu a seguinte mensagem do formulário de contato:
+                Você recebeu a seguinte mensagem:
               </Heading>
               <Text>{message}</Text>
               <Hr />

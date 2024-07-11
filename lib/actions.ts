@@ -41,12 +41,12 @@ export async function sendEmail(prevState: State, formData: FormData) {
     console.log('Error sending email...');
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing or invalid fields',
+      message: 'Missing fields. Please fill in all required fields.',
     };
   }
 
   // using shorthand syntax since names of properties and variables are the same
-  const { email, message } = validatedFields.data; //
+  const { email, message } = validatedFields.data;
 
   try {
     await resend.emails.send({
@@ -56,7 +56,7 @@ export async function sendEmail(prevState: State, formData: FormData) {
       reply_to: email,
       react: React.createElement(ContactFormEmail, { email, message }),
     });
-    return { ...prevState, message: 'Email sent!' };
+    return { ...prevState };
   } catch (error) {
     console.error('Error sending email:', error);
     return { ...prevState, message: 'Failed to send email, try again later.' };
