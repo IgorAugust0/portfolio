@@ -21,7 +21,6 @@ export default function ContactForm() {
       <form
         className="mt-9 flex flex-col"
         action={formAction}
-        // onSubmit={(e) => e.preventDefault()}
       >
         {/* Name field */}
         {/* <input

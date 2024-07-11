@@ -4,20 +4,13 @@ import React from 'react';
 import { z } from 'zod';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/components/contact/contact-form-email';
-import { getEnvVariable } from './utils';
+import { getEnvVariable } from '@/lib/utils';
+import type { State } from '@/lib/types';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const [sendTo, provider] = ['CONTACT_EMAIL', 'EMAIL_PROVIDER'].map((name) =>
   getEnvVariable(name),
 );
-
-export type State = {
-  errors?: {
-    email?: string[];
-    message?: string[];
-  };
-  message?: string | null;
-};
 
 const FormSchema = z.object({
   email: z
@@ -48,17 +41,23 @@ export async function sendEmail(prevState: State, formData: FormData) {
   // using shorthand syntax since names of properties and variables are the same
   const { email, message } = validatedFields.data;
 
+  let data;
   try {
-    await resend.emails.send({
+    data = await resend.emails.send({
       from: `Contact Form <${provider}>`,
       to: sendTo,
       subject: 'Contato do portfólio',
       reply_to: email,
       react: React.createElement(ContactFormEmail, { email, message }),
     });
-    return { ...prevState };
-  } catch (error) {
+    // return { ...prevState };
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
     return { ...prevState, message: 'Failed to send email, try again later.' };
   }
+
+  return {
+    ...prevState,
+    data,
+  };
 }

@@ -1,9 +1,20 @@
 import { useActionState, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import type { FormValues, InputChangeEvent, SectionName } from '@/lib/types';
-import { State, sendEmail } from './actions';
+import type {
+  FormValues,
+  InputChangeEvent,
+  SectionName,
+  State,
+} from '@/lib/types';
+import { sendEmail } from '@/lib/actions';
 
+/**
+ * Custom hook for observing a section in the viewport.
+ * @param sectionName - The name of the section to observe.
+ * @param threshold - The threshold for the intersection observer.
+ * @returns A ref to attach to the section element.
+ */
 export function useSectionObserver({
   sectionName,
   threshold = 0.5,
@@ -14,8 +25,6 @@ export function useSectionObserver({
   const { ref, inView } = useInView({ threshold });
   const { setActiveSection, lastClicked } = useActiveSectionContext();
 
-  // Set the active section if the section is in view
-  // and the last click was more than 1 second ago
   useEffect(() => {
     if (inView && Date.now() - lastClicked > 1000) {
       setActiveSection(sectionName);
