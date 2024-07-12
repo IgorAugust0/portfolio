@@ -7,16 +7,16 @@ import { FormValues } from '@/lib/types';
 import { useFormFilled } from '@/lib/hooks';
 import { Tooltip } from 'react-tooltip';
 
-export default function SubmitBtn(/*{ formValues }: { formValues: FormValues }*/) {
+export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
   const { pending } = useFormStatus();
-  // const isFormFilled = useFormFilled(formValues);
-  const isDisabled = pending /*|| !isFormFilled*/;
+  const isFormFilled = useFormFilled(formValues);
+  const isDisabled = pending || !isFormFilled;
 
   return (
     <div>
       <button
         type="submit"
-        disabled={isDisabled}
+        disabled={isDisabled} // comment/remove this line if you want to show error messages
         data-tooltip-id="submit-btn-tooltip"
         data-tooltip-content={isDisabled ? 'Preencha todos os campos' : ''}
         className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 

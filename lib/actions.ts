@@ -24,7 +24,7 @@ const FormSchema = z.object({
     .max(500, { message: 'Mensagem deve ter no máximo 500 caracteres' }),
 });
 
-export async function sendEmail(/*prevState: State,*/ formData: FormData) {
+export async function sendEmail(prevState: State, formData: FormData) {
   const validatedFields = FormSchema.safeParse({
     email: formData.get('email') as string,
     message: formData.get('message') as string,
@@ -54,14 +54,14 @@ export async function sendEmail(/*prevState: State,*/ formData: FormData) {
   } catch (error: unknown) {
     console.error('Error sending email:', error);
     return {
-      // ...prevState,
-      // message: 'Failed to send email, try again later.',
-      error: getErrorMessage(error),
+      ...prevState,
+      message: 'Failed to send email, try again later.',
+      // error: getErrorMessage(error),
     };
   }
 
   return {
-    // ...prevState,
+    ...prevState,
     data,
   };
 }

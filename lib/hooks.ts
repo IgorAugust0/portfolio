@@ -58,7 +58,7 @@ export function useFormFilled(formValues: FormValues) {
  * @param formData - The form data to be sent in the email.
  * @returns A promise that resolves to void.
  */
-export async function handleFormSubmit(formData: FormData) {
+/* export async function handleFormSubmit(formData: FormData) {
   const { data, error } = await sendEmail(formData);
 
   if (error) {
@@ -67,13 +67,13 @@ export async function handleFormSubmit(formData: FormData) {
   }
 
   toast.success('Email enviado com sucesso!');
-}
+} */
 
 /**
  * Custom hook for handling a contact form using experimental hook `useActionState`.
  * @returns An object containing form values, input change handler, form action, and state.
  */
-/* export function useContactForm() {
+export function useContactForm() {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(sendEmail, initialState);
   const [formValues, setFormValues] = useState({ email: '', message: '' });
@@ -93,4 +93,4 @@ export async function handleFormSubmit(formData: FormData) {
     formAction,
     state,
   };
-} */
+}

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import SubmitBtn from '@/components/contact/submit-button';
-import { /*useContactForm,*/ handleFormSubmit } from '@/lib/hooks';
+import { useContactForm/* , handleFormSubmit */ } from '@/lib/hooks';
 
 export default function ContactForm() {
-  // const { formValues, handleInputChange, formAction, state } = useContactForm();
+  const { formValues, handleInputChange, formAction, state } = useContactForm();
 
   return (
     <>
@@ -19,8 +19,8 @@ export default function ContactForm() {
 
       <form
         className="mt-9 flex flex-col"
-        // action={formAction}
-        action={handleFormSubmit}
+        action={formAction}
+        // action={handleFormSubmit}
       >
         {/* Name field */}
         {/* <input
@@ -37,51 +37,50 @@ export default function ContactForm() {
           type="email"
           name="email"
           id="email"
-          // value={formValues.email}
-          // onChange={handleInputChange}
+          value={formValues.email}
+          onChange={handleInputChange}
           placeholder="Seu email"
           autoComplete="email"
           aria-describedby="email-error"
           className="border-blk my-3 h-14 rounded-lg border px-4"
         />
-        {/* Email error */}
-        {/* <div id="email-error" aria-live="polite" aria-atomic="true">
+        <div id="email-error" aria-live="polite" aria-atomic="true">
           {state.errors?.email &&
             state.errors.email.map((error: string) => (
               <p key={error} className="text-sm text-red-500">
                 {error}
               </p>
             ))}
-        </div> */}
+        </div>
 
         {/* Message field */}
         <textarea
           name="message"
           id="message"
-          // value={formValues.message}
-          // onChange={handleInputChange}
+          value={formValues.message}
+          onChange={handleInputChange}
           placeholder="Sua mensagem"
           aria-describedby="message-error"
           className="border-blk my-3 h-52 rounded-lg p-4"
         ></textarea>
-        {/* <div id="message-error" aria-live="polite" aria-atomic="true">
+        <div id="message-error" aria-live="polite" aria-atomic="true">
           {state.errors?.message &&
             state.errors.message.map((error: string) => (
               <p key={error} className="text-sm text-red-500">
                 {error}
               </p>
             ))}
-        </div> */}
+        </div>
 
         {/* Fields error message */}
-        {/* <div aria-live="polite" aria-atomic="true">
+        <div aria-live="polite" aria-atomic="true">
           {state.message ? (
             <p className="mb-4 text-sm text-red-500">{state.message}</p>
           ) : null}
-        </div> */}
+        </div>
 
         {/* Submit button */}
-        <SubmitBtn /*formValues={formValues}*/ />
+        <SubmitBtn formValues={formValues} />
       </form>
     </>
   );
