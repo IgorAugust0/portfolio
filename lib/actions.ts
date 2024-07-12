@@ -3,9 +3,9 @@
 import React from 'react';
 import { z } from 'zod';
 import { Resend } from 'resend';
-import ContactFormEmail from '@/components/contact/contact-form-email';
-import { getEnvVariable } from '@/lib/utils';
+import { getEnvVariable, getErrorMessage } from '@/lib/utils';
 import type { State } from '@/lib/types';
+import ContactFormEmail from '@/components/contact/contact-form-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const [sendTo, provider] = ['CONTACT_EMAIL', 'EMAIL_PROVIDER'].map((name) =>
@@ -24,7 +24,7 @@ const FormSchema = z.object({
     .max(500, { message: 'Mensagem deve ter no máximo 500 caracteres' }),
 });
 
-export async function sendEmail(prevState: State, formData: FormData) {
+export async function sendEmail(/*prevState: State,*/ formData: FormData) {
   const validatedFields = FormSchema.safeParse({
     email: formData.get('email') as string,
     message: formData.get('message') as string,
@@ -53,11 +53,15 @@ export async function sendEmail(prevState: State, formData: FormData) {
     // return { ...prevState };
   } catch (error: unknown) {
     console.error('Error sending email:', error);
-    return { ...prevState, message: 'Failed to send email, try again later.' };
+    return {
+      // ...prevState,
+      // message: 'Failed to send email, try again later.',
+      error: getErrorMessage(error),
+    };
   }
 
   return {
-    ...prevState,
+    // ...prevState,
     data,
   };
 }

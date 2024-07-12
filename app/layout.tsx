@@ -5,6 +5,7 @@ import '@/app/globals.css';
 import TopNav from '@/components/topnav';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 import Footer from '@/components/footer';
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: 'Igor Augusto | Full-stack Developer',
@@ -30,6 +31,7 @@ export default function RootLayout({
           <TopNav />
           {children}
           <Footer />
+          <Toaster position="bottom-right"/>
         </ActiveSectionContextProvider>
       </body>
     </html>

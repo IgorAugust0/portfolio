@@ -7,10 +7,10 @@ import { FormValues } from '@/lib/types';
 import { useFormFilled } from '@/lib/hooks';
 import { Tooltip } from 'react-tooltip';
 
-export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
+export default function SubmitBtn(/*{ formValues }: { formValues: FormValues }*/) {
   const { pending } = useFormStatus();
-  const isFormFilled = useFormFilled(formValues);
-  const isDisabled = pending || !isFormFilled;
+  // const isFormFilled = useFormFilled(formValues);
+  const isDisabled = pending /*|| !isFormFilled*/;
 
   return (
     <div>
