@@ -4,13 +4,13 @@
 
 html {
   --line-color: #e5e7eb;
-  --scrollbar-track-color: #f1f5f9;
+  --scrollbar-track-color: rgba(255, 255, 255, 0.1);
   --scrollbar-thumb-color: #d1d5db;
 }
 
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
-  --scrollbar-track-color: #2c2c2c;
+  --scrollbar-track-color: rgba(44, 44, 44, 0.1);
   --scrollbar-thumb-color: #4a4a4a;
 }
 

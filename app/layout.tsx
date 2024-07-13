@@ -8,6 +8,7 @@ import Footer from '@/components/footer';
 import { Toaster } from 'react-hot-toast';
 import ThemeSwitch from '@/components/theme-switch';
 import ThemeContextProvider from '@/context/theme-context';
+// import AnimatedThemeWrapper from '@/components/animated-theme-wrapper';
 
 export const metadata: Metadata = {
   title: 'Igor Augusto | Full-stack Developer',

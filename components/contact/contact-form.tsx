@@ -42,7 +42,8 @@ export default function ContactForm() {
           placeholder="Seu email"
           autoComplete="email"
           aria-describedby="email-error"
-          className="border-blk my-3 h-14 rounded-lg border px-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20"
+          className="border-blk my-3 h-14 rounded-lg border px-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20 transition duration-300 
+        ease-in-out"
         />
         <div id="email-error" aria-live="polite" aria-atomic="true">
           {state.errors?.email &&
@@ -61,7 +62,8 @@ export default function ContactForm() {
           onChange={handleInputChange}
           placeholder="Sua mensagem"
           aria-describedby="message-error"
-          className="border-blk my-3 h-52 rounded-lg p-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20"
+          className="border-blk my-3 h-52 rounded-lg p-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20 transition duration-300 
+        ease-in-out"
         ></textarea>
         <div id="message-error" aria-live="polite" aria-atomic="true">
           {state.errors?.message &&
