@@ -2,14 +2,14 @@
 
 import React from 'react';
 import SubmitBtn from '@/components/contact/submit-button';
-import { useContactForm/* , handleFormSubmit */ } from '@/lib/hooks';
+import { useContactForm /* , handleFormSubmit */ } from '@/lib/hooks';
 
 export default function ContactForm() {
   const { formValues, handleInputChange, formAction, state } = useContactForm();
 
   return (
     <>
-      <p className="-mt-4 text-gray-700">
+      <p className="-mt-4 text-gray-700 dark:text-white/80">
         Por favor entre em contato diretamente em&nbsp;
         <a href="mailto:augustoigor269@gmail.com" className="underline">
           augustoigor269@gmail.com
@@ -42,7 +42,7 @@ export default function ContactForm() {
           placeholder="Seu email"
           autoComplete="email"
           aria-describedby="email-error"
-          className="border-blk my-3 h-14 rounded-lg border px-4"
+          className="border-blk my-3 h-14 rounded-lg border px-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20"
         />
         <div id="email-error" aria-live="polite" aria-atomic="true">
           {state.errors?.email &&
@@ -61,7 +61,7 @@ export default function ContactForm() {
           onChange={handleInputChange}
           placeholder="Sua mensagem"
           aria-describedby="message-error"
-          className="border-blk my-3 h-52 rounded-lg p-4"
+          className="border-blk my-3 h-52 rounded-lg p-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20"
         ></textarea>
         <div id="message-error" aria-live="polite" aria-atomic="true">
           {state.errors?.message &&

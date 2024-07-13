@@ -41,33 +41,8 @@ export function useSectionObserver({
  * @returns A boolean indicating whether the form is filled or not.
  */
 export function useFormFilled(formValues: FormValues) {
-  const [isFormFilled, setIsFormFilled] = useState(false);
-
-  useEffect(() => {
-    const isFilled =
-      formValues.email.trim() !== '' && formValues.message.trim() !== '';
-    setIsFormFilled(isFilled);
-  }, [formValues]);
-
-  return isFormFilled;
+  return formValues.email.trim() !== '' && formValues.message.trim() !== '';
 }
-
-/**
- * Handles the form submission by sending an email with the provided form data,
- * showing a toast notification on success or error.
- * @param formData - The form data to be sent in the email.
- * @returns A promise that resolves to void.
- */
-/* export async function handleFormSubmit(formData: FormData) {
-  const { data, error } = await sendEmail(formData);
-
-  if (error) {
-    toast.error(error);
-    return;
-  }
-
-  toast.success('Email enviado com sucesso!');
-} */
 
 /**
  * Custom hook for handling a contact form using experimental hook `useActionState`.
@@ -94,3 +69,20 @@ export function useContactForm() {
     state,
   };
 }
+
+/**
+ * Handles the form submission by sending an email with the provided form data,
+ * showing a toast notification on success or error.
+ * @param formData - The form data to be sent in the email.
+ * @returns A promise that resolves to void.
+ */
+/* export async function handleFormSubmit(formData: FormData) {
+  const { data, error } = await sendEmail(formData);
+
+  if (error) {
+    toast.error(error);
+    return;
+  }
+
+  toast.success('Email enviado com sucesso!');
+} */

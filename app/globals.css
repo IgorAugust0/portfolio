@@ -4,10 +4,39 @@
 
 html {
   --line-color: #e5e7eb;
+  --scrollbar-track-color: #f1f5f9;
+  --scrollbar-thumb-color: #d1d5db;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+  --scrollbar-track-color: #2c2c2c;
+  --scrollbar-thumb-color: #4a4a4a;
 }
 
 @layer components {
   .border-blk {
     @apply border border-black/10;
   }
+}
+
+/* Webkit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color); /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid var(--scrollbar-track-color); /* Space around the thumb */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* Thickness of the scrollbar */
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color); /* Thumb color and track color */
 }

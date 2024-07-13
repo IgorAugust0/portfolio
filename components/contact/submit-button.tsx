@@ -6,11 +6,13 @@ import { useFormStatus } from 'react-dom';
 import { FormValues } from '@/lib/types';
 import { useFormFilled } from '@/lib/hooks';
 import { Tooltip } from 'react-tooltip';
+import { useTheme } from '@/context/theme-context';
 
 export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
   const { pending } = useFormStatus();
   const isFormFilled = useFormFilled(formValues);
   const isDisabled = pending || !isFormFilled;
+  const { theme } = useTheme();
 
   return (
     <div>
@@ -19,10 +21,9 @@ export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
         disabled={isDisabled} // comment/remove this line if you want to show error messages
         data-tooltip-id="submit-btn-tooltip"
         data-tooltip-content={isDisabled ? 'Preencha todos os campos' : ''}
-        className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 
-        rounded-full bg-gray-900 text-white outline-none transition-all 
-        hover:scale-105 hover:bg-gray-950 focus:scale-105 active:scale-100 
-        disabled:scale-100 disabled:cursor-not-allowed disabled:bg-opacity-70"
+        className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 text-white 
+        outline-none transition-all hover:scale-105 hover:bg-gray-950 focus:scale-105 active:scale-100 disabled:scale-100 
+        disabled:cursor-not-allowed disabled:bg-opacity-70 dark:bg-white dark:bg-opacity-10 dark:hover:bg-white/20"
       >
         {pending ? (
           <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
@@ -39,12 +40,19 @@ export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
         id="submit-btn-tooltip"
         place="bottom"
         style={{
-          backgroundColor: '#333',
-          color: '#fff',
+          backgroundColor:
+            theme === 'dark'
+              ? 'rgba(255, 255, 255, 0.1)'
+              : 'rgba(243, 244, 246, 1)',
+          color:
+            theme === 'dark'
+              ? 'rgba(255, 255, 255, 0.7)'
+              : 'rgba(55, 65, 81, 1)',
           padding: '0.5rem 1rem',
           borderRadius: '0.5rem',
           fontSize: '0.875rem',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          transition: 'background-color 0.2s ease-in-out',
         }}
       />
     </div>

@@ -9,7 +9,8 @@ import { useActiveSectionContext } from '@/context/active-section-context';
 // import { usePathname } from "next/navigation";
 
 export default function NavLinks() {
-  const { activeSection, setActiveSection, setLastClicked } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setLastClicked } =
+    useActiveSectionContext();
 
   return (
     <nav className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
@@ -28,15 +29,18 @@ export default function NavLinks() {
                 setLastClicked(Date.now());
               }}
               className={clsx(
-                'flex w-full items-center justify-center px-3 py-3 transition hover:text-gray-950',
-                { 'text-gray-950': activeSection === link.name },
+                'flex w-full items-center justify-center px-3 py-3 transition hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300',
+                {
+                  'text-gray-950 dark:text-gray-200':
+                    activeSection === link.name,
+                },
               )}
             >
               {link.name}
 
               {link.name === activeSection && (
                 <motion.span
-                  className="absolute inset-0 -z-10 rounded-full bg-gray-200 "
+                  className="absolute inset-0 -z-10 rounded-full bg-gray-200 dark:bg-gray-800"
                   layoutId="activeSection"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 ></motion.span>
