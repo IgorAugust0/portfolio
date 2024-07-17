@@ -51,6 +51,8 @@ export type State = {
     message?: string[];
   };
   message?: string | null;
+  type: 'default' | 'loading' | 'success' | 'error',
+  toastId: string
 };
 
 export interface FormValues {

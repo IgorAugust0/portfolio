@@ -2,10 +2,16 @@
 
 import React from 'react';
 import SubmitBtn from '@/components/contact/submit-button';
-import { useContactForm /* , handleFormSubmit */ } from '@/lib/hooks';
+import { useContactForm } from '@/lib/hooks';
 
 export default function ContactForm() {
-  const { formValues, handleInputChange, formAction, state } = useContactForm();
+  const {
+    formValues,
+    handleInputChange,
+    formAction,
+    state,
+    handleSubmitClick,
+  } = useContactForm();
 
   return (
     <>
@@ -20,7 +26,7 @@ export default function ContactForm() {
       <form
         className="mt-9 flex flex-col"
         action={formAction}
-        // action={handleFormSubmit}
+        onSubmit={handleSubmitClick}
       >
         {/* Name field */}
         {/* <input
@@ -42,8 +48,8 @@ export default function ContactForm() {
           placeholder="Seu email"
           autoComplete="email"
           aria-describedby="email-error"
-          className="border-blk my-3 h-14 rounded-lg border px-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20 transition duration-300 
-        ease-in-out"
+          className="border-blk my-3 h-14 rounded-lg border px-4 transition duration-300 ease-in-out dark:bg-white/10 dark:text-white/70 
+        dark:hover:bg-white/20"
         />
         <div id="email-error" aria-live="polite" aria-atomic="true">
           {state.errors?.email &&
@@ -62,8 +68,8 @@ export default function ContactForm() {
           onChange={handleInputChange}
           placeholder="Sua mensagem"
           aria-describedby="message-error"
-          className="border-blk my-3 h-52 rounded-lg p-4 dark:bg-white/10 dark:text-white/70 dark:hover:bg-white/20 transition duration-300 
-        ease-in-out"
+          className="border-blk my-3 h-52 rounded-lg p-4 transition duration-300 ease-in-out dark:bg-white/10 dark:text-white/70 
+        dark:hover:bg-white/20"
         ></textarea>
         <div id="message-error" aria-live="polite" aria-atomic="true">
           {state.errors?.message &&

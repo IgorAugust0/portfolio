@@ -50,9 +50,22 @@ export function useFormFilled(formValues: FormValues) {
  * @returns An object containing form values, input change handler, form action, and state.
  */
 export function useContactForm() {
-  const initialState: State = { message: null, errors: {} };
+  const initialState: State = {
+    message: null,
+    errors: {},
+    type: 'default',
+    toastId: '',
+  };
   const [state, formAction] = useActionState(sendEmail, initialState);
   const [formValues, setFormValues] = useState({ email: '', message: '' });
+
+  useEffect(() => {
+    if (state.type === 'success') {
+      toast.success('Email enviado com sucesso!', { id: state.toastId });
+    } else if (state.type === 'error') {
+      toast.error('Falha no envio do email.', { id: state.toastId });
+    }
+  }, [state.type, state.toastId]);
 
   const handleInputChange = (e: InputChangeEvent) => {
     const { name, value } = e.target;
@@ -63,11 +76,16 @@ export function useContactForm() {
     state.message = null;
   };
 
+  const handleSubmitClick = () => {
+    state.toastId = toast.loading('Enviando email...');
+  };
+
   return {
     formValues,
     handleInputChange,
     formAction,
     state,
+    handleSubmitClick,
   };
 }
 

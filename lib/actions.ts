@@ -3,7 +3,7 @@
 import React from 'react';
 import { z } from 'zod';
 import { Resend } from 'resend';
-import { getEnvVariable, getErrorMessage } from '@/lib/utils';
+import { getEnvVariable } from '@/lib/utils';
 import type { State } from '@/lib/types';
 import ContactFormEmail from '@/components/contact/contact-form-email';
 
@@ -24,7 +24,10 @@ const FormSchema = z.object({
     .max(500, { message: 'Mensagem deve ter no máximo 500 caracteres' }),
 });
 
-export async function sendEmail(prevState: State, formData: FormData) {
+export async function sendEmail(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
   const validatedFields = FormSchema.safeParse({
     email: formData.get('email') as string,
     message: formData.get('message') as string,
@@ -34,34 +37,30 @@ export async function sendEmail(prevState: State, formData: FormData) {
     console.log('Error sending email...');
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Dados faltando. Por favor, preencha todos os campos.',
+      message: 'Dados faltando ou incorretos. Preencha os campos corretamente.',
+      type: 'error',
+      toastId: prevState.toastId,
     };
   }
 
   // using shorthand syntax since names of properties and variables are the same
   const { email, message } = validatedFields.data;
 
-  let data;
   try {
-    data = await resend.emails.send({
+    await resend.emails.send({
       from: `Contact Form <${provider}>`,
       to: sendTo,
       subject: 'Contato do portfólio',
       reply_to: email,
       react: React.createElement(ContactFormEmail, { email, message }),
     });
-    // return { ...prevState };
+    return { ...prevState, type: 'success' };
   } catch (error: unknown) {
     console.error('Error sending email:', error);
     return {
       ...prevState,
       message: 'Failed to send email, try again later.',
-      // error: getErrorMessage(error),
+      type: 'error',
     };
   }
-
-  return {
-    ...prevState,
-    data,
-  };
 }
