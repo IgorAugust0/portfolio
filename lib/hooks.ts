@@ -89,6 +89,22 @@ export function useContactForm() {
 } */
 
 /**
+ * Custom React hook that returns a boolean indicating whether the code is running on the client-side.
+ * This hook sets the initial value to `false` and updates it to `true` once the component is mounted.
+ *
+ * @returns {boolean} A boolean value indicating whether the code is running on the client-side.
+ */
+export function useIsClient(): boolean {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  return isClient;
+}
+
+/**
  * Custom hook that handles the transition animation when toggling between themes.
  * @returns An object containing the switchRef, toggleTheme, and theme values.
  */
