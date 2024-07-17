@@ -11,12 +11,7 @@ import {
   Text,
 } from '@react-email/components';
 import { Tailwind } from '@react-email/tailwind';
-
-interface ContactFormEmailProps {
-  // name: string;
-  email: string;
-  message: string;
-}
+import { ContactFormEmailProps } from '@/lib/types';
 
 export default function ContactFormEmail({
   email,

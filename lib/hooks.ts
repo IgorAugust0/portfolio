@@ -1,4 +1,4 @@
-import { useActionState, useEffect, useState } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/active-section-context';
 import type {
@@ -9,6 +9,7 @@ import type {
 } from '@/lib/types';
 import { sendEmail } from '@/lib/actions';
 import toast from 'react-hot-toast';
+import { useTheme } from '@/context/theme-context';
 
 /**
  * Custom hook for observing a section in the viewport.
@@ -86,3 +87,35 @@ export function useContactForm() {
 
   toast.success('Email enviado com sucesso!');
 } */
+
+/**
+ * Custom hook that handles the transition animation when toggling between themes.
+ * @returns An object containing the switchRef, toggleTheme, and theme values.
+ */
+export function useThemeTransition() {
+  const { theme, toggleTheme } = useTheme();
+  const switchRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const { clientX: x, clientY: y } = e;
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${Math.hypot(window.innerWidth, window.innerHeight)}px at ${x}px ${y}px)`,
+      ];
+      document.documentElement.animate(
+        { clipPath: theme === 'light' ? clipPath : clipPath.reverse() },
+        { duration: 300, easing: 'ease-in' },
+      );
+    };
+
+    const button = switchRef.current;
+    button?.addEventListener('click', handleClick);
+
+    return () => {
+      button?.removeEventListener('click', handleClick);
+    };
+  }, [theme]);
+
+  return { switchRef, toggleTheme, theme };
+}

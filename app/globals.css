@@ -18,6 +18,9 @@ html.dark {
   .border-blk {
     @apply border border-black/10;
   }
+  .theme-transition {
+    @apply transition-colors duration-500;
+  }
 }
 
 /* Webkit browsers */

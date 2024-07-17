@@ -1,11 +1,12 @@
-import { experiencesData, links } from '@/lib/data';
+import { experiencesData, links, projectsData } from '@/lib/data';
 import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react';
 
 // Type definitions
 
-export type SectionName = (typeof links)[number]['name'];
-export type ExperienceItemProps = (typeof experiencesData)[number];
 export type Theme = 'light' | 'dark';
+export type SectionName = (typeof links)[number]['name'];
+export type ProjectCardProps = (typeof projectsData)[number];
+export type ExperienceItemProps = (typeof experiencesData)[number];
 export type InputChangeEvent = ChangeEvent<
   HTMLInputElement | HTMLTextAreaElement
 >;
@@ -30,6 +31,16 @@ export interface ActiveSectionContextProviderProps {
 
 export interface ThemeContextProviderProps {
   children: ReactNode;
+}
+
+export interface ContactFormEmailProps {
+  // name: string;
+  email: string;
+  message: string;
+}
+
+export interface SectionHeadingProps {
+  children: React.ReactNode;
 }
 
 // Form types

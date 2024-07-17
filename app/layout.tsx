@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} relative bg-gray-50 pt-28 text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90 sm:pt-36`}
+        className={`${inter.className} theme-transition relative bg-gray-50 pt-28 text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90 sm:pt-36`}
       >
         {/* Background Blob Right */}
         <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-[#fbe2e3] blur-[10rem] dark:bg-[#946263] sm:w-[68.75rem]"></div>
