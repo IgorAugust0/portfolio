@@ -15,29 +15,26 @@ export default function ThemeContextProvider({
 }: ThemeContextProviderProps) {
   const isClient = useIsClient();
 
+  // Get initial theme from local storage or user media
   const getInitialTheme = (): Theme => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = window.localStorage.getItem('theme') as Theme;
-      if (savedTheme) return savedTheme;
-      const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
-      return userMedia.matches ? 'dark' : 'light';
-    }
-    return 'light'; // Default theme for server-side rendering
+    const savedTheme = window.localStorage.getItem('theme') as Theme;
+    if (savedTheme) return savedTheme;
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    return userMedia.matches ? 'dark' : 'light';
   };
 
   const [theme, setTheme] = useState<Theme>('light'); // Default initial theme
-  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
 
+  // Set theme on client side only
   useEffect(() => {
-    if (isClient && !isThemeLoaded) {
-      const initialTheme = getInitialTheme();
-      setTheme(initialTheme);
-      setIsThemeLoaded(true);
+    if (isClient) {
+      setTheme(getInitialTheme());
     }
-  }, [isClient, isThemeLoaded]);
+  }, [isClient]);
 
+  // Apply theme and listen for OS theme changes
   useEffect(() => {
-    if (!isClient) return; // Ensure this runs only on the client side
+    if (!isClient) return;
 
     const applyTheme = (theme: Theme) => {
       window.localStorage.setItem('theme', theme);
@@ -60,6 +57,7 @@ export default function ThemeContextProvider({
     };
   }, [theme, isClient]);
 
+  // Toggle theme between light and dark
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
