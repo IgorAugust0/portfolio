@@ -35,5 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/public/assets/next.svg
-/public/assets/vercel.svg
+/public/assets/*.svg
+/public/*.js
+/public/*.map

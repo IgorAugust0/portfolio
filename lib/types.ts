@@ -51,9 +51,13 @@ export type State = {
     message?: string[];
   };
   message?: string | null;
+};
+
+export type StateReactHotToast = {
   type: 'default' | 'loading' | 'success' | 'error',
   toastId: string
-};
+}
+
 
 export interface FormValues {
   email: string;

@@ -4,7 +4,7 @@ import React from 'react';
 import { z } from 'zod';
 import { Resend } from 'resend';
 import { getEnvVariable } from '@/lib/utils';
-import type { State } from '@/lib/types';
+import type { State, StateReactHotToast } from '@/lib/types';
 import ContactFormEmail from '@/components/contact/contact-form-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -25,9 +25,9 @@ const FormSchema = z.object({
 });
 
 export async function sendEmail(
-  prevState: State,
+  prevState: State & StateReactHotToast,
   formData: FormData,
-): Promise<State> {
+): Promise<State & StateReactHotToast> {
   const validatedFields = FormSchema.safeParse({
     email: formData.get('email') as string,
     message: formData.get('message') as string,

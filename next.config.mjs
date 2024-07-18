@@ -11,7 +11,6 @@ const pwaConfig = withPWA({
   workboxOptions: {
     disableDevLogs: true,
   },
-  // ... other options you like
 });
 
 /** @type {import('next').NextConfig} */

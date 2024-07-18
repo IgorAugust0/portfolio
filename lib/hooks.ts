@@ -6,6 +6,7 @@ import type {
   InputChangeEvent,
   SectionName,
   State,
+  StateReactHotToast,
 } from '@/lib/types';
 import { sendEmail } from '@/lib/actions';
 import toast from 'react-hot-toast';
@@ -50,7 +51,7 @@ export function useFormFilled(formValues: FormValues) {
  * @returns An object containing form values, input change handler, form action, and state.
  */
 export function useContactForm() {
-  const initialState: State = {
+  const initialState: State & StateReactHotToast = {
     message: null,
     errors: {},
     type: 'default',
