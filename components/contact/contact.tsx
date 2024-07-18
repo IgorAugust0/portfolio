@@ -18,7 +18,7 @@ export default function Contact() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <SectionHeading>Entre em contato</SectionHeading>
+      <SectionHeading>contato</SectionHeading>
       <ContactForm />
     </motion.section>
   );

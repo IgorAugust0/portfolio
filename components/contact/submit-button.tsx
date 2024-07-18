@@ -22,9 +22,9 @@ export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
         data-tooltip-id="submit-btn-tooltip"
         data-tooltip-content={isDisabled ? 'Preencha todos os campos' : ''}
         aria-label="Enviar mensagem de contato"
-        className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 text-white 
-        outline-none transition-all hover:scale-105 hover:bg-gray-950 focus:scale-105 active:scale-100 disabled:scale-100 
-        disabled:cursor-not-allowed disabled:bg-opacity-30 dark:bg-indigo-800 dark:bg-opacity-90 dark:hover:bg-indigo-600 disabled:dark:hover:bg-indigo-900"
+        className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 rounded-full bg-indigo-800 text-white 
+        outline-none transition-all hover:scale-105 hover:bg-indigo-700 focus:scale-105 active:scale-100 disabled:scale-100 
+        disabled:cursor-not-allowed disabled:bg-opacity-50 dark:bg-indigo-800 dark:bg-opacity-90 dark:hover:bg-indigo-600 disabled:dark:hover:bg-indigo-900 disabled:hover:bg-indigo-800/70 disabled:dark:bg-opacity-40"
       >
         {pending ? (
           <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>

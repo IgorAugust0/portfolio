@@ -43,14 +43,14 @@ export default function ContactForm() {
           />
           <label
             htmlFor="email"
-            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-gray-500 dark:bg-gray-950 dark:text-white/70 peer-focus:dark:text-gray-400/90"
+            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-indigo-500 dark:bg-gray-950 dark:text-white/70 peer-focus:dark:text-indigo-400"
           >
             Seu email
           </label>
           <div id="email-error" aria-live="polite" aria-atomic="true">
             {state.errors?.email &&
               state.errors.email.map((error: string) => (
-                <p key={error} className="text-sm text-red-500">
+                <p key={error} className="-mb-2 mt-3 text-sm text-red-500">
                   {error}
                 </p>
               ))}
@@ -70,14 +70,14 @@ export default function ContactForm() {
           ></textarea>
           <label
             htmlFor="message"
-            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-gray-500 dark:bg-gray-950 dark:text-white/70 peer-focus:dark:text-gray-400/90"
+            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-indigo-500 dark:bg-gray-950 dark:text-white/80 peer-focus:dark:text-indigo-400"
           >
             Sua mensagem
           </label>
           <div id="message-error" aria-live="polite" aria-atomic="true">
             {state.errors?.message &&
               state.errors.message.map((error: string) => (
-                <p key={error} className="text-sm text-red-500">
+                <p key={error} className="-mb-2 mt-3 text-sm text-red-500">
                   {error}
                 </p>
               ))}
