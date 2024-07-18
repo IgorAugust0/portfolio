@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast';
 export default function ToastWrapper() {
   return (
     <Toaster
-      position="bottom-right"
+      position="bottom-center"
       toastOptions={{
         className:
           '!bg-gray-100 dark:!bg-gray-900 text-sm !text-gray-900 dark:!text-white border !border-gray-300/10 dark:!border-gray-700',

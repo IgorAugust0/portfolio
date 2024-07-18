@@ -3,11 +3,11 @@
 import React from 'react';
 import { BsMoon, BsSun } from 'react-icons/bs';
 import { useTheme } from '@/context/theme-context';
-import { useThemeTransition } from '@/lib/hooks';
+// import { useThemeTransition } from '@/lib/hooks';
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
-  // const { switchRef, toggleTheme, theme } = useThemeTransition();
+  // const { switchRef, toggleTheme, theme } = useThemeTransition(); // experimental feature
   return (
     <button
       // ref={switchRef}

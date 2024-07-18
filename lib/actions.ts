@@ -25,7 +25,7 @@ const FormSchema = z.object({
 });
 
 export async function sendEmail(
-  prevState: State & StateReactHotToast,
+  prevState: State & StateReactHotToast, // intersection type
   formData: FormData,
 ): Promise<State & StateReactHotToast> {
   const validatedFields = FormSchema.safeParse({

@@ -18,12 +18,13 @@ export default function SubmitBtn({ formValues }: { formValues: FormValues }) {
     <div>
       <button
         type="submit"
-        disabled={isDisabled} // comment/remove this line if you want to show error messages
+        disabled={isDisabled}
         data-tooltip-id="submit-btn-tooltip"
         data-tooltip-content={isDisabled ? 'Preencha todos os campos' : ''}
+        aria-label="Enviar mensagem de contato"
         className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 text-white 
         outline-none transition-all hover:scale-105 hover:bg-gray-950 focus:scale-105 active:scale-100 disabled:scale-100 
-        disabled:cursor-not-allowed disabled:bg-opacity-70 dark:bg-white dark:bg-opacity-10 dark:hover:bg-white/20"
+        disabled:cursor-not-allowed disabled:bg-opacity-30 dark:bg-indigo-800 dark:bg-opacity-90 dark:hover:bg-indigo-600 disabled:dark:hover:bg-indigo-900"
       >
         {pending ? (
           <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>

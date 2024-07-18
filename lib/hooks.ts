@@ -48,7 +48,7 @@ export function useFormFilled(formValues: FormValues) {
 
 /**
  * Custom hook for handling a contact form using experimental hook `useActionState`.
- * @returns An object containing form values, input change handler, form action, and state.
+ * @returns An object containing form values, input change handler, form action, form state, and submit click handler.
  */
 export function useContactForm() {
   const initialState: State & StateReactHotToast = {
@@ -91,23 +91,6 @@ export function useContactForm() {
 }
 
 /**
- * Handles the form submission by sending an email with the provided form data,
- * showing a toast notification on success or error.
- * @param formData - The form data to be sent in the email.
- * @returns A promise that resolves to void.
- */
-/* export async function handleFormSubmit(formData: FormData) {
-  const { data, error } = await sendEmail(formData);
-
-  if (error) {
-    toast.error(error);
-    return;
-  }
-
-  toast.success('Email enviado com sucesso!');
-} */
-
-/**
  * Custom React hook that returns a boolean indicating whether the code is running on the client-side.
  * This hook sets the initial value to `false` and updates it to `true` once the component is mounted.
  *
@@ -124,7 +107,7 @@ export function useIsClient(): boolean {
 }
 
 /**
- * Custom hook that handles the transition animation when toggling between themes.
+ * Experimental custom hook that handles the transition animation when toggling between themes. Not currently used.
  * @returns An object containing the switchRef, toggleTheme, and theme values.
  */
 export function useThemeTransition() {

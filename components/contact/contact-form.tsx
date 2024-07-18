@@ -28,56 +28,60 @@ export default function ContactForm() {
         action={formAction}
         onSubmit={handleSubmitClick}
       >
-        {/* Name field */}
-        {/* <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Seu nome/empresa"
-          autoComplete="name"
-          className="border-blk h-14 rounded-lg border px-4"
-        /> */}
-
         {/* Email field */}
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={formValues.email}
-          onChange={handleInputChange}
-          placeholder="Seu email"
-          autoComplete="email"
-          aria-describedby="email-error"
-          className="border-blk my-3 h-14 rounded-lg border px-4 transition duration-300 ease-in-out dark:bg-white/10 dark:text-white/70 
-        dark:hover:bg-white/20"
-        />
-        <div id="email-error" aria-live="polite" aria-atomic="true">
-          {state.errors?.email &&
-            state.errors.email.map((error: string) => (
-              <p key={error} className="text-sm text-red-500">
-                {error}
-              </p>
-            ))}
+        <div className="relative my-3">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={formValues.email}
+            onChange={handleInputChange}
+            placeholder=" "
+            autoComplete="email"
+            aria-describedby="email-error"
+            className="border-blk peer h-14 w-full appearance-none rounded-lg px-4 transition duration-300 ease-in-out focus:border-indigo-600 focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-transparent dark:text-white/70 dark:focus:border-indigo-500"
+          />
+          <label
+            htmlFor="email"
+            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-gray-500 dark:bg-gray-950 dark:text-white/70 peer-focus:dark:text-gray-400/90"
+          >
+            Seu email
+          </label>
+          <div id="email-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.email &&
+              state.errors.email.map((error: string) => (
+                <p key={error} className="text-sm text-red-500">
+                  {error}
+                </p>
+              ))}
+          </div>
         </div>
 
         {/* Message field */}
-        <textarea
-          name="message"
-          id="message"
-          value={formValues.message}
-          onChange={handleInputChange}
-          placeholder="Sua mensagem"
-          aria-describedby="message-error"
-          className="border-blk my-3 h-52 rounded-lg p-4 transition duration-300 ease-in-out dark:bg-white/10 dark:text-white/70 
-        dark:hover:bg-white/20"
-        ></textarea>
-        <div id="message-error" aria-live="polite" aria-atomic="true">
-          {state.errors?.message &&
-            state.errors.message.map((error: string) => (
-              <p key={error} className="text-sm text-red-500">
-                {error}
-              </p>
-            ))}
+        <div className="relative my-3">
+          <textarea
+            name="message"
+            id="message"
+            value={formValues.message}
+            onChange={handleInputChange}
+            placeholder=" "
+            aria-describedby="message-error"
+            className="border-blk peer h-52 w-full appearance-none rounded-lg p-4 transition duration-300 ease-in-out focus:border-indigo-600 focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-transparent dark:text-white/70 dark:focus:border-indigo-500"
+          ></textarea>
+          <label
+            htmlFor="message"
+            className="absolute -top-2.5 left-2 z-10 origin-[0] bg-white px-2 text-sm text-gray-500 transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-gray-500 dark:bg-gray-950 dark:text-white/70 peer-focus:dark:text-gray-400/90"
+          >
+            Sua mensagem
+          </label>
+          <div id="message-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.message &&
+              state.errors.message.map((error: string) => (
+                <p key={error} className="text-sm text-red-500">
+                  {error}
+                </p>
+              ))}
+          </div>
         </div>
 
         {/* Fields error message */}
