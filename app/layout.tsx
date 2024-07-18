@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { inter } from '../components/fonts';
 import '@/app/globals.css';
 import TopNav from '@/components/topnav';
@@ -11,10 +11,15 @@ import ToastWrapper from '@/components/toast-wrapper';
 import { BlobRight, BlobLeft } from '@/components/blobs';
 
 export const metadata: Metadata = {
+  manifest: '/manifest.json',
   title: 'Igor Augusto | Full-stack Developer',
   description:
     'Igor is a full-stack developer with 2 years of experience that have done multiple projects with many technologies.',
-  // metadataBase: new URL('https://igor-augusto.com'),
+  metadataBase: new URL('https://igor-augusto.vercel.app/'),
+};
+
+export const viewport: Viewport = {
+  themeColor: '#1f2937',
 };
 
 export default function RootLayout({

@@ -2,9 +2,9 @@ import { createElement } from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
 import { FaReact } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
-import dividImg from '@/public/divid.png';
-import heinc from '@/public/heinc.png';
-import timecapsuleImg from '@/public/timecapsule.png';
+import dividImg from '@/public/assets/divid.png';
+import heinc from '@/public/assets/heinc.png';
+import timecapsuleImg from '@/public/assets/timecapsule.png';
 
 export const links = [
   { name: 'Início', hash: '#inicio' },

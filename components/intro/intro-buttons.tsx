@@ -31,7 +31,7 @@ export default function IntroButtons() {
         <BsArrowRight className="opacity-70 transition group-hover:translate-x-1" />
       </Link>
       <a
-        href="/resumeIgorAugusto.pdf"
+        href="/assets/resumeIgorAugusto.pdf"
         target="_blank"
         rel="noopener noreferrer"
         download={false}
