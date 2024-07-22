@@ -53,6 +53,7 @@ export const projectsData = [
       'Aplicativo de divisão de despesas, onde é possível criar grupos de despesas, adicionar membros e registrar as despesas do grupo. Fui desenvolvedor front-end, responsável pelas telas de login, cadastro, homepage e detalhes do usuário.',
     tags: ['SwiftUI', 'Node-RED', 'IBM Cloud', 'Cloudant', 'Figma'],
     imageUrl: dividImg,
+    url: 'https://github.com/IgorAugust0/DiviD',
   },
   {
     id: 2,
@@ -61,6 +62,7 @@ export const projectsData = [
       'Aplicação web full-stack de portal de anúncios de produtos com sistema de login e cadastro. Com seções de acesso público (homepage com anúncios) e privado (dashboard do usuário com CRUD de anúncios e do usuário, além de mensagens de interesse).',
     tags: ['PHP', 'Axios', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     imageUrl: heinc,
+    url: 'http://hieinc.infinityfreeapp.com/',
   },
   {
     id: 3,
@@ -76,6 +78,7 @@ export const projectsData = [
       'Expo',
     ],
     imageUrl: timecapsuleImg,
+    url: 'https://github.com/IgorAugust0/nlw-spacetime',
   },
 ] as const;
 

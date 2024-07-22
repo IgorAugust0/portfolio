@@ -57,11 +57,11 @@ export default function IntroButtons() {
         target="_blank"
         rel="noopener noreferrer"
       />
-      <IntroButtonsSocials
+      {/* <IntroButtonsSocials
         href="mailto:augustoigor269@gmail.com"
         icon={<MdEmail />}
         label="Email"
-      />
+      /> */}
     </motion.div>
   );
 }
