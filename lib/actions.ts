@@ -6,6 +6,7 @@ import { Resend } from 'resend';
 import { getEnvVariable } from '@/lib/utils';
 import type { State, StateReactHotToast } from '@/lib/types';
 import ContactFormEmail from '@/components/contact/contact-form-email';
+import { randomUUID as uuid } from 'crypto';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const [sendTo, provider] = ['CONTACT_EMAIL', 'EMAIL_PROVIDER'].map((name) =>
@@ -49,10 +50,13 @@ export async function sendEmail(
   try {
     await resend.emails.send({
       from: `Contact Form <${provider}>`,
-      to: sendTo,
+      to: [sendTo],
       subject: 'Contato do portfólio',
       reply_to: email,
       react: React.createElement(ContactFormEmail, { email, message }),
+      headers: {
+        'X-Entity-Ref-ID': uuid(), // unique identifier for the email to prevent thread in gmail
+      },
     });
     return { ...prevState, type: 'success' };
   } catch (error: unknown) {

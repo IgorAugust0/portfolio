@@ -11,6 +11,14 @@ export type InputChangeEvent = ChangeEvent<
   HTMLInputElement | HTMLTextAreaElement
 >;
 
+export interface IntroButtonsSocialsProps {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  target?: string;
+  rel?: string;
+}
+
 // Context types and props
 
 export interface ActiveSectionContextType {
@@ -54,10 +62,9 @@ export type State = {
 };
 
 export type StateReactHotToast = {
-  type: 'default' | 'loading' | 'success' | 'error',
-  toastId: string
-}
-
+  type: 'default' | 'loading' | 'success' | 'error';
+  toastId: string;
+};
 
 export interface FormValues {
   email: string;

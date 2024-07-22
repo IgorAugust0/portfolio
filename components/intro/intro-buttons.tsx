@@ -5,8 +5,10 @@ import React from 'react';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
+import { MdEmail } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import { useActiveSectionContext } from '@/context/active-section-context';
+import IntroButtonsSocials from '@/components/intro/intro-buttons-socials';
 
 export default function IntroButtons() {
   const { setActiveSection, setLastClicked } = useActiveSectionContext();
@@ -41,41 +43,25 @@ export default function IntroButtons() {
         Currículo
         <HiDownload className="opacity-60 transition group-hover:translate-y-1.5" />
       </a>
-      <a
+      <IntroButtonsSocials
         href="https://www.linkedin.com/in/igor-august0/"
+        icon={<BsLinkedin />}
+        label="LinkedIn"
         target="_blank"
         rel="noopener noreferrer"
-        className="border-blk group relative flex items-center gap-2 rounded-full bg-white
-        p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out 
-        hover:scale-105 focus:scale-105 active:scale-100 dark:bg-white/10 dark:text-white/60"
-      >
-        <BsLinkedin />
-        <span
-          className="absolute left-[50%] top-[3.25rem] z-20 hidden origin-top 
-          -translate-x-[50%] scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2
-          text-sm font-bold shadow-md transition-all duration-300 ease-in-out
-          group-hover:scale-100 sm:block dark:border-gray-600 dark:bg-white/10 dark:text-white/60"
-        >
-          LinkedIn
-        </span>
-      </a>
-      <a
+      />
+      <IntroButtonsSocials
         href="https://github.com/IgorAugust0"
+        icon={<FaGithubSquare />}
+        label="GitHub"
         target="_blank"
         rel="noopener noreferrer"
-        className="border-blk group relative flex items-center gap-2 rounded-full bg-white 
-        p-4 px-7 py-3 text-[1.35rem] text-gray-700 outline-none transition ease-in-out 
-        hover:scale-105 focus:scale-105 active:scale-100 dark:bg-white/10 dark:text-white/60"
-      >
-        <FaGithubSquare />
-        <span
-          className="absolute left-[50%] top-[3.25rem] z-20 hidden origin-top -translate-x-[50%] 
-          scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-bold shadow-md
-          transition-all duration-300 ease-in-out group-hover:scale-100 sm:block dark:border-gray-600 dark:bg-white/10 dark:text-white/60"
-        >
-          GitHub
-        </span>
-      </a>
+      />
+      <IntroButtonsSocials
+        href="mailto:augustoigor269@gmail.com"
+        icon={<MdEmail />}
+        label="Email"
+      />
     </motion.div>
   );
 }

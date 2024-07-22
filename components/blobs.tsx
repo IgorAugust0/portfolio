@@ -18,3 +18,12 @@ export function BlobLeft() {
     ></div>
   );
 }
+
+export default function Blobs() {
+  return (
+    <div>
+      <BlobRight />
+      <BlobLeft />
+    </div>
+  );
+}
