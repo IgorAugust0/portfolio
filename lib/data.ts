@@ -27,21 +27,21 @@ export const experiencesData = [
   },
   {
     id: 2,
-    title: 'Lorem Ipsum',
+    title: 'Maratona SBC - ICPC',
     location: 'Uberlândia, MG',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
+      'Participei da Maratona de Programação da Sociedade Brasileira de Computação, onde tive a oportunidade de competir com outros estudantes de computação, resolvendo problemas de lógica e algoritmos em equipe.',
     icon: createElement(CgWorkAlt),
-    date: '2022-2023',
+    date: '2021/2022',
   },
   {
     id: 3,
-    title: 'Lorem Ipsum',
+    title: 'HackaTruck MakerSpace - Eldorado',
     location: 'Uberlândia, MG',
     description:
-      'Lorem ipsum adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
+      'Fui selecionado para participar do HackaTruck MakerSpace, um projeto de capacitação profissional tecnológica, onde aprendi com criatividade a desenvolver protótipos de aplicativos e soluções utilizando as tecnologias mais atuais de linguagem de programação Swift, Internet das Coisas e de serviços cognitivos em nuvem.',
     icon: createElement(FaReact),
-    date: '2023-2024',
+    date: '2023',
   },
 ] as const;
 

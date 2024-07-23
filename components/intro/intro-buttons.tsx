@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
-import { FaGithubSquare } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
 import { motion } from 'framer-motion';
@@ -52,7 +52,7 @@ export default function IntroButtons() {
       />
       <IntroButtonsSocials
         href="https://github.com/IgorAugust0"
-        icon={<FaGithubSquare />}
+        icon={<FaGithub />}
         label="GitHub"
         target="_blank"
         rel="noopener noreferrer"
