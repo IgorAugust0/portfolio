@@ -8,10 +8,9 @@ import type { State, StateReactHotToast } from '@/lib/types';
 import ContactFormEmail from '@/components/contact/contact-form-email';
 import { randomUUID as uuid } from 'crypto';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const [sendTo, provider] = ['CONTACT_EMAIL', 'EMAIL_PROVIDER'].map((name) =>
-  getEnvVariable(name),
-);
+const resend = new Resend(getEnvVariable('RESEND_API_KEY'));
+const sendTo = getEnvVariable('CONTACT_EMAIL');
+const provider = getEnvVariable('EMAIL_PROVIDER');
 
 const FormSchema = z.object({
   email: z

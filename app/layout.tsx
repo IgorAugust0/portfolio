@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} theme-transition relative bg-gray-50 pt-28 text-gray-950 antialiased sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
       >
-        <Blobs />
+        {/* <Blobs /> */}
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <TopNav />

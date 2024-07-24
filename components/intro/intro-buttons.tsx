@@ -12,6 +12,8 @@ import IntroButtonsSocials from '@/components/intro/intro-buttons-socials';
 
 export default function IntroButtons() {
   const { setActiveSection, setLastClicked } = useActiveSectionContext();
+  const LINKEDIN_URL = process.env.NEXT_PUBLIC_LINKEDIN_URL as string;
+  const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL as string;
 
   return (
     <motion.div
@@ -43,25 +45,27 @@ export default function IntroButtons() {
         Currículo
         <HiDownload className="opacity-60 transition group-hover:translate-y-1.5" />
       </a>
-      <IntroButtonsSocials
-        href="https://www.linkedin.com/in/igor-august0/"
-        icon={<BsLinkedin />}
-        label="LinkedIn"
-        target="_blank"
-        rel="noopener noreferrer"
-      />
-      <IntroButtonsSocials
-        href="https://github.com/IgorAugust0"
-        icon={<FaGithub />}
-        label="GitHub"
-        target="_blank"
-        rel="noopener noreferrer"
-      />
-      {/* <IntroButtonsSocials
-        href="mailto:augustoigor269@gmail.com"
-        icon={<MdEmail />}
-        label="Email"
-      /> */}
+      <div className="flex gap-2">
+        <IntroButtonsSocials
+          href={LINKEDIN_URL}
+          icon={<BsLinkedin />}
+          label="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+        <IntroButtonsSocials
+          href={GITHUB_URL}
+          icon={<FaGithub />}
+          label="GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+        {/* <IntroButtonsSocials
+          href="mailto:augustoigor269@gmail.com"
+          icon={<MdEmail />}
+          label="Email"
+        /> */}
+      </div>
     </motion.div>
   );
 }
