@@ -24,8 +24,8 @@ export default function IntroButtons() {
     >
       <Link
         href="#contato"
-        className="group flex items-center gap-2 rounded-full bg-gray-800 px-7 py-3 text-white 
-        outline-none transition ease-in-out hover:scale-105 focus:scale-105 focus:bg-gray-900 active:scale-100 dark:bg-gray-950"
+        className="group flex items-center gap-2 rounded-full border border-white border-opacity-30 bg-gray-800 
+        px-7 py-3 text-white outline-none transition ease-in-out hover:scale-105 focus:scale-105 focus:bg-gray-900 active:scale-100 sm:border-none dark:bg-gray-950"
         onClick={() => {
           setActiveSection('Contato');
           setLastClicked(Date.now());

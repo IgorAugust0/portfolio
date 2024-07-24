@@ -22,17 +22,13 @@ export const viewport: Viewport = {
   themeColor: '#1f2937',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} theme-transition relative bg-gray-50 pt-28 text-gray-950 antialiased sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${inter.className} sm:theme-transition relative bg-gray-50 pt-28 text-gray-950 antialiased sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
       >
-        {/* <Blobs /> */}
+        <Blobs />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <TopNav />
