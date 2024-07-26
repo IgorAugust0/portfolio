@@ -1,7 +1,8 @@
-import { getEnvVariable } from '@/lib/utils';
 import { MetadataRoute } from 'next';
+import { getEnvVariable } from '@/lib/utils';
 
 const websiteUrl = getEnvVariable('WEBSITE_URL');
+
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
       {
