@@ -7,7 +7,7 @@ import IntroButtons from '@/components/intro/intro-buttons';
 import { useSectionObserver } from '@/lib/hooks';
 
 export default function Intro() {
-  const ref = useSectionObserver({ sectionName: 'Início' });
+  const { ref } = useSectionObserver({ sectionName: 'Início' });
 
   return (
     <section

@@ -34,7 +34,7 @@ export function useSectionObserver({
     }
   }, [inView, setActiveSection, lastClicked, sectionName]); // dependencies array
 
-  return ref;
+  return { ref, inView };
 }
 
 /**

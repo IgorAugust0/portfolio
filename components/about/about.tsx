@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useSectionObserver } from '@/lib/hooks';
 
 export default function About() {
-  const ref = useSectionObserver({ sectionName: 'Sobre', threshold: 0.75 });
+  const { ref } = useSectionObserver({ sectionName: 'Sobre', threshold: 0.75 });
 
   return (
     <motion.section
@@ -21,12 +21,15 @@ export default function About() {
       <p className="mb-3">
         Atualmente sou estudante do 7º período do curso de
         <span className="font-medium"> Sistemas de Informação</span> na
-        Universidade Federal de Uberlândia. Sempre tive interesse em tecnologia
-        desde mais novo.
+        Universidade Federal de Uberlândia.&nbsp;
+        {/* 
+        Sempre tive interesse em tecnologia desde mais novo.
         <span className="italic"> Minha parte favorita de programação</span> é o
         aspecto da resolução de problemas. Eu&nbsp;
         <span className="underline">amo</span> a sensação de finalmente
-        descobrir uma solução para um problema. Minha stack principal é Java com
+        descobrir uma solução para um problema.
+        */}
+        Minha stack principal é Java com
         <span className="font-medium">
           &nbsp;Spring Boot, React, Next.js e PostgreSQL
         </span>
@@ -35,7 +38,7 @@ export default function About() {
       </p>
 
       <p>
-        Quando não estou <span className="italic">estudando/programando</span>,
+        Quando não estou <span className="italic">estudando</span>,
         gosto de jogar videogames, assistir filmes/séries, e praticar esportes.
         Gosto sempre de
         <span className="font-medium"> aprender coisas novas</span>. Atualmente

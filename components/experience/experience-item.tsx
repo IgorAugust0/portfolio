@@ -11,6 +11,7 @@ export default function ExperienceItem({
   description,
   date,
   icon,
+  // url,
 }: ExperienceItemProps) {
   const { theme } = useTheme();
 
@@ -33,13 +34,22 @@ export default function ExperienceItem({
       date={date}
       icon={icon}
       iconStyle={{
-        background: theme === 'light' ? 'white' : 'rgba(255, 255, 255, 0.15)',
+        background: theme === 'light' ? 'white' : '#111827',
         fontSize: '1.5rem',
       }}
     >
       <h3 className="font-semibold capitalize">{title}</h3>
       <p className="!mt-0 font-normal">{location}</p>
-      <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+      {/* {url && (
+        <a
+          target="_blank"
+          href={url}
+          className="mb-2 text-sm text-gray-500 dark:text-gray-400"
+        >
+          {url}
+        </a>
+      )} */}
+      <p className="!mt-1 !text-sm !font-normal text-gray-700 dark:text-white/75">
         {description}
       </p>
     </VerticalTimelineElement>

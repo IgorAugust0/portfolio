@@ -9,7 +9,7 @@ import { useSectionObserver } from '@/lib/hooks';
 import ExperienceItem from '@/components/experience/experience-item';
 
 export default function Experience() {
-  const ref = useSectionObserver({ sectionName: 'Experiência' });
+  const { ref } = useSectionObserver({ sectionName: 'Experiência' });
 
   return (
     <section ref={ref} id="experiencia" className="mb-28 scroll-mt-28 sm:mb-40">

@@ -6,8 +6,8 @@ const pwaConfig = withPWA({
   aggressiveFrontEndNavCaching: true,
   reloadOnOnline: true,
   swcMinify: true,
-  disable: false,
-  // disable: true, // process.env.NODE_ENV === "development",
+  disable: false, // set to true to disable PWA
+  // process.env.NODE_ENV === "development", // specify which environment to disable it
   workboxOptions: {
     disableDevLogs: true,
   },

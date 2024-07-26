@@ -7,7 +7,7 @@ import ProjectCard from '@/components/projects/project-card';
 import { useSectionObserver } from '@/lib/hooks';
 
 export default function Projects() {
-  const ref = useSectionObserver({ sectionName: 'Projetos' });
+  const { ref } = useSectionObserver({ sectionName: 'Projetos' });
 
   return (
     <section ref={ref} id="projetos" className="mb-28 scroll-mt-28">

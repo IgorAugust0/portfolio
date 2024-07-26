@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import ContactForm from '@/components/contact/contact-form';
 
 export default function Contact() {
-  const ref = useSectionObserver({ sectionName: 'Contato' });
+  const { ref } = useSectionObserver({ sectionName: 'Contato' });
   return (
     <motion.section
       ref={ref}

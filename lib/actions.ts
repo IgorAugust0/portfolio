@@ -48,9 +48,9 @@ export async function sendEmail(
 
   try {
     await resend.emails.send({
-      from: `Contact Form <${provider}>`,
+      from: `Portfolio <${provider}>`,
       to: [sendTo],
-      subject: 'Contato do portfólio',
+      subject: '📧 Nova mensagem!',
       reply_to: email,
       react: React.createElement(ContactFormEmail, { email, message }),
       headers: {

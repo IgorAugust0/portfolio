@@ -7,7 +7,7 @@ import { useSectionObserver } from '@/lib/hooks';
 import SkillItem from '@/components/skills/skill-item';
 
 export default function Skills() {
-  const ref = useSectionObserver({ sectionName: 'Habilidades' });
+  const { ref } = useSectionObserver({ sectionName: 'Habilidades' });
   return (
     <section
       ref={ref}

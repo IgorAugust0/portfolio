@@ -10,7 +10,7 @@ export default function ProjectCard({
   description,
   tags,
   imageUrl,
-  url,
+  repoUrl,
 }: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,7 +31,7 @@ export default function ProjectCard({
       className="group mb-3 last:mb-0 sm:mb-8"
     >
       <a
-        href={url}
+        href={repoUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Link to ${title}`}
@@ -46,7 +46,7 @@ export default function ProjectCard({
               {tags.map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:text-white/70 "
+                  className="rounded-full bg-gray-800 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:bg-gray-950 dark:text-white/70 "
                 >
                   {tag}
                 </li>
@@ -58,7 +58,7 @@ export default function ProjectCard({
             src={imageUrl}
             alt="Projetos que fiz/participei"
             quality={95}
-            className="absolute -right-40 top-8 hidden w-[28.25rem] rounded-t-lg shadow-2xl transition 
+            className="absolute -right-40 top-8 hidden w-[28.25rem] rounded-t-lg shadow-2xl transition
             group-even:-left-40
             group-even:right-[initial]
             group-hover:-translate-x-3
