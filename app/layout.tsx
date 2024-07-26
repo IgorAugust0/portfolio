@@ -9,13 +9,28 @@ import ThemeSwitch from '@/components/theme-switch';
 import ThemeContextProvider from '@/context/theme-context';
 import ToastWrapper from '@/components/toast-wrapper';
 import Blobs from '@/components/blobs';
+import { getEnvVariable } from "@/lib/utils";
+
+const websiteUrl = getEnvVariable('WEBSITE_URL');
 
 export const metadata: Metadata = {
   manifest: '/manifest.json',
-  title: 'Igor Augusto | Full-stack Developer',
+  title: {
+    default: 'Igor Augusto | Full-Stack Developer',
+    template: '%s | Igor Augusto',
+  },
   description:
-    'Igor is a full-stack developer with 2 years of experience that have done multiple projects with many technologies.',
-  metadataBase: new URL('https://igor-augusto.vercel.app/'),
+    'Igor é um desenvolvedor full-stack que adora criar coisas bonitas e funcionais, além de resolver problemas. Ele é apaixonado por tecnologia e sempre está procurando aprender algo novo.',
+  openGraph: {
+    title: 'Igor Augusto | Full-Stack Developer',
+    description:
+      'Igor é um desenvolvedor full-stack que adora criar coisas bonitas e funcionais, além de resolver problemas. Ele é apaixonado por tecnologia e sempre está procurando aprender algo novo.',
+    type: 'website',
+    locale: 'pt_BR',
+    url: websiteUrl,
+    siteName: 'Igor Augusto',
+  },
+  metadataBase: new URL(websiteUrl),
 };
 
 export const viewport: Viewport = {

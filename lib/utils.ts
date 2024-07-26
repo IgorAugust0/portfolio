@@ -10,5 +10,6 @@ export const getEnvVariable = (name: string, defaultValue?: string): string => {
   }
 
   // return value ?? defaultValue;
+  // console.log('value: ', value);
   return value;
 };
