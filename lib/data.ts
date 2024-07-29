@@ -98,7 +98,7 @@ export const skillsData = [
   'Node.js',
   'Design Patterns',
   'Tailwind',
-  'Prisma',
+  'Hibernate',
   'PostgreSQL',
   'Python',
   'SwiftUI',
