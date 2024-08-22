@@ -11,6 +11,7 @@ import ToastWrapper from '@/components/toast-wrapper';
 import Blobs from '@/components/blobs';
 import { getEnvVariable } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
+import PwaInstallPrompt from "@/components/pwa-install-prompt";
 
 const websiteUrl = getEnvVariable('WEBSITE_URL');
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Footer />
             <ToastWrapper />
             <ThemeSwitch />
+            <PwaInstallPrompt />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
         <Analytics />
