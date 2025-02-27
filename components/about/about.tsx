@@ -19,7 +19,7 @@ export default function About() {
     >
       <SectionHeading>Sobre mim</SectionHeading>
       <p className="mb-3">
-        Atualmente sou estudante do 7º período do curso de
+        Atualmente curso o 8º período do curso de
         <span className="font-medium"> Sistemas de Informação</span> na
         Universidade Federal de Uberlândia.&nbsp;
         {/* 
@@ -29,11 +29,11 @@ export default function About() {
         <span className="underline">amo</span> a sensação de finalmente
         descobrir uma solução para um problema.
         */}
-        Minha stack principal é Java com
+        Minha stack principal é C# com
         <span className="font-medium">
-          &nbsp;Spring Boot, React, Next.js e PostgreSQL
+          &nbsp;.NET Core e PostgreSQL/SQL Server
         </span>
-        . Também sou familiar com desenvolvimento mobile para iOS. Estou sempre
+        , mas também sou familiar com tecnologias de desenvolvimento front-end como a Typescript, React, além de Node.js e Next.js, por meio de projetos pessoais e acadêmicos. Assim, estou sempre
         procurando aprender novas tecnologias!
       </p>
 

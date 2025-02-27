@@ -10,12 +10,12 @@ export default function IntroHeading() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <span className="font-bold">Olá, sou o Igor! <br/></span> Sou um{' '}
-      <span className="font-bold">desenvolvedor web full-stack</span> que está em
-      busca de minha primeira <span className="font-bold">oportunidade</span>.
-      Gosto de construir <span className="italic">sites e apps</span>. Meu foco
-      atualmente é <span className="underline">Java &#40;Spring Boot&#41;</span>{' '}
-      e <span className="underline">React &#40;Next.js&#41;</span>.
+      <span className="font-bold">Olá, sou o Igor! <br/></span> Sou um
+      <span className="font-bold">desenvolvedor web full-stack</span>
+      , atualmente atuando com <span className="font-bold"> back-end</span>.
+      Gosto de construir sites e apps <span className="italic">otimizados e eficientes</span>
+      . Meu foco atualmente é <span className="font-bold">C# </span> com o framework 
+      <span className="font-bold"> .NET</span> :&#41;
     </motion.h1>
   );
 }

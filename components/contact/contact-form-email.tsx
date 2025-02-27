@@ -44,7 +44,7 @@ export default function ContactFormEmail({
             </Section>
             <Section className="mt-6 rounded-b-md bg-gray-200 py-4 text-center text-black">
               <Text className="text-sm">
-                &copy; 2024&nbsp;
+                &copy; 2025&nbsp;
                 <Link
                   href="https://igor-augusto.vercel.app/"
                   className="text-indigo-600"

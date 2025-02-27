@@ -19,17 +19,17 @@ export const links = [
 export const experiencesData = [
   {
     id: 1,
-    title: 'Graduando em Sistema de Informação',
+    title: 'Graduação em Sistema de Informação',
     url: 'https://www.ufu.br/',
     location: 'Uberlândia, MG',
     description:
-      'Atualmente cursando o 7º período de Sistemas de Informação na Universidade Federal de Uberlândia, onde tenho aprendido sobre diversas áreas da computação, como programação, banco de dados, redes, engenharia de software, entre outras.',
+      'Atualmente cursando o 8º período de Sistemas de Informação na Universidade Federal de Uberlândia, onde tenho aprendido sobre diversas áreas da computação, como programação, banco de dados, redes, engenharia de software, entre outras.',
     icon: createElement(LuGraduationCap),
     date: '2021-Atualmente',
   },
   {
     id: 2,
-    title: 'Maratona SBC - ICPC',
+    title: 'Participante Maratona SBC - ICPC',
     url: 'https://maratona.sbc.org.br/',
     location: 'Uberlândia, MG',
     description:
@@ -39,13 +39,23 @@ export const experiencesData = [
   },
   {
     id: 3,
-    title: 'HackaTruck MakerSpace - Eldorado',
+    title: 'Aluno do HackaTruck MakerSpace',
     url: 'https://hackatruck.com.br/',
     location: 'Uberlândia, MG',
     description:
       'Fui selecionado para participar do HackaTruck MakerSpace, um projeto de capacitação profissional tecnológica, onde aprendi com criatividade a desenvolver protótipos de aplicativos e soluções utilizando as tecnologias mais atuais de linguagem de programação Swift, Internet das Coisas e de serviços cognitivos em nuvem.',
     icon: createElement(GrCertificate),
     date: '2023',
+  },
+  {
+    id: 4,
+    title: 'Back-end Developer Intern',
+    url: 'https://mottu.com.br/',
+    location: 'Uberlândia, MG',
+    description:
+      'Atualmente atuo como estagiário de desenvolvimento back-end na Mottu, contribuindo para o desenvolvimento de novas funcionalidades e manutenção de sistemas. Minha stack principal é .NET Core, C#, SQL Server.',
+    icon: createElement(CgWorkAlt),
+    date: '2025-Atualmente',
   },
 ] as const;
 
@@ -89,18 +99,34 @@ export const projectsData = [
   },
 ] as const;
 
+// export const skillsData = [
+//   'Java',
+//   'Spring Boot',
+//   'TypeScript',
+//   'React',
+//   'Next.js',
+//   'Node.js',
+//   'Design Patterns',
+//   'Tailwind',
+//   'Hibernate',
+//   'PostgreSQL',
+//   'Python',
+//   'SwiftUI',
+//   'Framer Motion',
+// ] as const;
+
 export const skillsData = [
-  'Java',
-  'Spring Boot',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Design Patterns',
-  'Tailwind',
-  'Hibernate',
+  'C#',
+  '.NET',
   'PostgreSQL',
+  'SQL Server',
+  'Entity Framework',
+  'TypeScript',
+  'Tailwind',
+  'Node.js',
+  'Next.js',
+  'React',
   'Python',
   'SwiftUI',
-  'Framer Motion',
+  'Design Patterns',
 ] as const;

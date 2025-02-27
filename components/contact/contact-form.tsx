@@ -16,11 +16,11 @@ export default function ContactForm() {
   return (
     <>
       <p className="-mt-4 text-gray-700 dark:text-white/80">
-        Por favor entre em contato diretamente em&nbsp;
+        Caso tenha interesse, por favor entre em contato diretamente em&nbsp;
         <a href="mailto:augustoigor269@gmail.com" className="underline">
           augustoigor269@gmail.com
         </a>
-        ,&nbsp;ou por meio do campo abaixo
+        ,&nbsp;ou por meio dos campos abaixos:
       </p>
 
       <form
